@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arsip Tugas Pemrograman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">JavaScript · Latihan Dasar</p>
+      <h1>Arsip Tugas Pemrograman</h1>
+      <p class="lead">Latihan percabangan, perulangan, function, dan pola dengan nested loop. Setiap soal disertai kode yang bisa dibuka langsung di halaman ini, beserta hasil outputnya.</p>
+    </div>
+    <aside class="glass summary" aria-label="Ringkasan">
+      <h2>Isi arsip</h2>
+      <div class="stat"><b>15</b><span>soal selesai</span></div>
+      <hr>
+      <div class="stat"><b>4</b><span>kategori latihan</span></div>
+    </aside>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter kategori">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">Semua</button>
+    <button class="chip" type="button" data-filter="cabang" aria-pressed="false">Percabangan</button>
+    <button class="chip" type="button" data-filter="ulang" aria-pressed="false">Perulangan</button>
+    <button class="chip" type="button" data-filter="func" aria-pressed="false">Function</button>
+    <button class="chip" type="button" data-filter="pola" aria-pressed="false">Pola</button>
+  </div>
+
+  <main class="grid">
+    <article class="glass card" data-lang="cabang">
+      <div class="meta"><span class="lang">Percabangan</span><span class="pill ok">Selesai</span></div>
+      <h3>Sistem Penilaian Sederhana</h3>
+      <p>Meminta nilai lewat prompt(), lalu mencetak Lulus jika nilai 75 atau lebih, dan Remedial jika kurang dari 75.</p>
+      <ul class="tags"><li>prompt()</li><li>if / else if</li></ul>
+      <details>
+        <summary>Lihat kode</summary>
+        <pre><code>let nilai = prompt(&quot;Masukkan nilai anda:&quot;);
+
+if (nilai &gt;= 75) {
+  console.log(&quot;Lulus!&quot;)
+}
+else if (nilai &lt; 75) {
+  console.log(&quot;Remedial&quot;)
+}</code></pre>
+        <p class="out-label">Berjalan di browser dan meminta input lewat prompt().</p>
+      </details>
+    </article>
+    <article class="glass card" data-lang="cabang">
+      <div class="meta"><span class="lang">Percabangan</span><span class="pill ok">Selesai</span></div>
+      <h3>Konversi Kode Peran (Role)</h3>
+      <p>Menerjemahkan kode peran: A menjadi Admin, U menjadi User, kode lain menjadi Guest.</p>
+      <ul class="tags"><li>switch-case</li><li>default</li><li>prompt()</li></ul>
+      <details>
+        <summary>Lihat kode</summary>
+        <pre><code>let role = prompt(&quot;Masukan Role Anda:&quot;)
+    switch (role) {
+        case &quot;A&quot;:
+        console.log(&quot;Admin&quot;);
+        break;
+        case &quot;U&quot;:
+        console.log(&quot;User&quot;);
+        break;
+        default:
+            console.log(&quot;Guest&quot;)
+    }</code></pre>
+        <p class="out-label">Berjalan di browser dan meminta input lewat prompt().</p>
+      </details>
+    </article>
+    <article class="glass card" data-lang="ulang">
+      <div class="meta"><span class="lang">Perulangan</span><span class="pill ok">Selesai</span></div>
+      <h3>Cetak Kelipatan 10</h3>
+      <p>Mencetak 10 sampai 50 dengan for, naik 10 di setiap putaran.</p>
+      <ul class="tags"><li>for</li><li>i += 10</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 10; i &lt;= 50; i += 10) {
+    console.log(i)
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>10
+20
+30
+40
+50</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="ulang">
+      <div class="meta"><span class="lang">Perulangan</span><span class="pill ok">Selesai</span></div>
+      <h3>Hitung Mundur (Countdown)</h3>
+      <p>Menghitung mundur dari 3 sampai 1 dengan while, lalu mencetak Start !</p>
+      <ul class="tags"><li>while</li><li>i--</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>let hitung = 3;
+
+while (hitung &gt;= 1) {
+  console.log(hitung);hitung--;
+}
+
+console.log(&quot;Start !&quot;)</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>3
+2
+1
+Start !</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="func">
+      <div class="meta"><span class="lang">Function &amp; Logika</span><span class="pill ok">Selesai</span></div>
+      <h3>FizzBuzz</h3>
+      <p>Mencetak FizzBuzz untuk kelipatan 15, Buzz untuk kelipatan 5, dan Fizz untuk kelipatan 3. Kelipatan 15 diperiksa lebih dulu karena juga habis dibagi 3 dan 5.</p>
+      <ul class="tags"><li>function</li><li>% (modulus)</li><li>else if</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>function checknumber (angka) {
+    if (angka % 15 === 0) {
+        console.log(&quot;FizzBuzz&quot;);
+    } else if (angka % 5 === 0) {
+        console.log(&quot;Buzz&quot;);
+    } else if (angka % 3 === 0) {
+        console.log(&quot;Fizz&quot;);
+    } else {
+        console.log(&quot;Angka Bukan Kelipat 3,5,15 !&quot;);
+    }
+}
+checknumber(15);
+checknumber(5);
+checknumber(3);
+checknumber(11);</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>FizzBuzz
+Buzz
+Fizz
+Angka Bukan Kelipat 3,5,15 !</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="func">
+      <div class="meta"><span class="lang">Function &amp; Logika</span><span class="pill ok">Selesai</span></div>
+      <h3>Cek Genap dan Ganjil</h3>
+      <p>Function yang mencetak Genap atau Ganjil berdasarkan sisa bagi 2.</p>
+      <ul class="tags"><li>function</li><li>% (modulus)</li><li>if / else</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>function checknumber (angka) {
+    if (angka % 2 === 0) {
+        console.log(&quot;Genap&quot;)
+    } else {
+        console.log(&quot;Ganjil&quot;)
+    }
+}
+
+checknumber(67);
+checknumber(10);</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>Ganjil
+Genap</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="func">
+      <div class="meta"><span class="lang">Function &amp; Logika</span><span class="pill ok">Selesai</span></div>
+      <h3>Balik String</h3>
+      <p>Function yang membalik urutan karakter sebuah string, misalnya Koding menjadi gnidoK.</p>
+      <ul class="tags"><li>function</li><li>split()</li><li>reverse()</li><li>join()</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>function balikString(kata) {
+    return kata.split(&quot;&quot;).reverse().join(&quot;&quot;);
+}
+
+console.log(balikString(&quot;Koding&quot;));
+console.log(balikString(&quot;123&quot;));</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>gnidoK
+321</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Segitiga</h3>
+      <p>Segitiga siku-siku dari bintang, 4 baris, bertambah satu bintang di setiap baris.</p>
+      <ul class="tags"><li>nested for</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 4; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= i; j++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>*
+**
+***
+****</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Persegi Panjang</h3>
+      <p>Persegi panjang penuh dari bintang, 4 baris dan 8 kolom.</p>
+      <ul class="tags"><li>nested for</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 4; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 8; j++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>********
+********
+********
+********</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Persegi Panjang Kosong</h3>
+      <p>Persegi panjang 5 baris dan 8 kolom. Bintang hanya di tepi, bagian dalam diisi spasi.</p>
+      <ul class="tags"><li>nested for</li><li>if</li><li>||</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 8; j++) {
+        if (i === 1 || i === 5 || j === 1 || j === 8) {
+            baris += &quot;*&quot;;
+        } else {
+            baris += &quot; &quot;;
+        }
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>********
+*      *
+*      *
+*      *
+********</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Segitiga Sama Sisi</h3>
+      <p>Segitiga angka: tiap baris mengulang nomor barisnya, dengan spasi di depan supaya bentuknya simetris.</p>
+      <ul class="tags"><li>nested for</li><li>spasi</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 4; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 4 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    for (let k = 1; k &lt;= i; k++) {
+        baris += i + &quot; &quot;;
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>   1 
+  2 2 
+ 3 3 3 
+4 4 4 4 </code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Segitiga Sama Sisi 2</h3>
+      <p>Segitiga angka berurutan (1, lalu 2 3, lalu 4 5 6, dan seterusnya) dalam function cetakSegitigaSimetris(tinggi).</p>
+      <ul class="tags"><li>function</li><li>repeat()</li><li>push()</li><li>join()</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>function cetakSegitigaSimetris(tinggi) {
+    let angka = 1;
+
+    for (let i = 1; i &lt;= tinggi; i++) {
+        let spasi = &quot; &quot;.repeat(tinggi - i);
+        
+        let barisAngka = [];
+        for (let j = 1; j &lt;= i; j++) {
+            barisAngka.push(angka);
+            angka++;
+        }
+        
+        console.log(spasi + barisAngka.join(&quot; &quot;));
+    }
+}
+
+cetakSegitigaSimetris(4);</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>   1
+  2 3
+ 4 5 6
+7 8 9 10</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Belah Ketupat</h3>
+      <p>Belah ketupat 7 baris: bintang bertambah dari 1 sampai 7, lalu berkurang lagi.</p>
+      <ul class="tags"><li>nested for</li><li>dua blok loop</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 4; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 4 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    for (let k = 1; k &lt;= 2 * i - 1; k++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}
+
+for (let i = 3; i &gt;= 1; i--) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 4 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    for (let k = 1; k &lt;= 2 * i - 1; k++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Segitiga Jam Pasir</h3>
+      <p>Jam pasir: bintang menyempit dari 7 ke 1, lalu melebar lagi ke 7.</p>
+      <ul class="tags"><li>nested for</li><li>dua blok loop</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>// Bagian atas sampai tengah
+for (let i = 4; i &gt;= 1; i--) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 4 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    for (let k = 1; k &lt;= 2 * i - 1; k++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}
+
+// Bagian bawah
+for (let i = 2; i &lt;= 4; i++) {
+    let baris = &quot;&quot;;
+
+    for (let j = 1; j &lt;= 4 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    for (let k = 1; k &lt;= 2 * i - 1; k++) {
+        baris += &quot;*&quot;;
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>*******
+ *****
+  ***
+   *
+  ***
+ *****
+*******</code></pre>
+      </details>
+    </article>
+    <article class="glass card" data-lang="pola">
+      <div class="meta"><span class="lang">Pola</span><span class="pill ok">Selesai</span></div>
+      <h3>Segitiga Kosong</h3>
+      <p>Segitiga sama sisi 5 baris yang hanya berisi bintang di sisi kiri, sisi kanan, dan alasnya.</p>
+      <ul class="tags"><li>nested for</li><li>if</li><li>||</li></ul>
+      <details>
+        <summary>Lihat kode dan output</summary>
+        <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    let baris = &quot;&quot;;
+
+    // Spasi di depan
+    for (let j = 1; j &lt;= 5 - i; j++) {
+        baris += &quot; &quot;;
+    }
+
+    // Bintang atau spasi bagian dalam
+    for (let k = 1; k &lt;= 2 * i - 1; k++) {
+        if (i === 1 || i === 5 || k === 1 || k === 2 * i - 1) {
+            baris += &quot;*&quot;;
+        } else {
+            baris += &quot; &quot;;
+        }
+    }
+
+    console.log(baris);
+}</code></pre>
+        <p class="out-label">Output</p>
+        <pre class="output"><code>    *
+   * *
+  *   *
+ *     *
+*********</code></pre>
+      </details>
+    </article>
+  </main>
+
+  <footer>@Mo.Zalaluddin Rumi_14</footer>
+</div>
+
+<script>
+  var chips = document.querySelectorAll(".chip");
+  var cards = document.querySelectorAll(".card");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = chip.getAttribute("data-filter");
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
+      cards.forEach(function (card) {
+        card.hidden = !(f === "all" || card.getAttribute("data-lang") === f);
+      });
+    });
+  });
+</script>
+</body>
+</html>
